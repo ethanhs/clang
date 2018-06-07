@@ -7,5 +7,4 @@ setup(
     version="6.0.0",
     url="https://github.com/ethanhs/clang",
     packages=["clang"],
-    
 )
