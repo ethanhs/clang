@@ -1,0 +1,3 @@
+include README-clang.txt
+include pytest.ini
+recursive-include examples *

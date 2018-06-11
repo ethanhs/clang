@@ -14,7 +14,8 @@ pip install clang
 ```
 
 In the interest of keep things simple, this package will have the same version
-numbers as the clang release they were taken from.
+numbers as the clang release they were taken from. In the case of a mistake in
+packaging, a further patch versioning value will be added, such as 6.0.0.1.
 
 ## Why does this exist?
 
