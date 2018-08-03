@@ -14,7 +14,7 @@ setup(
     name="clang",
     author="Ethan Smith",
     author_email="ethan@ethanhs.me",
-    version="6.0.0.1",
+    version="6.0.0.2",
     url="https://github.com/ethanhs/clang",
     packages=["clang"],
     long_description=long_description,

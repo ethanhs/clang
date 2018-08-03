@@ -1,3 +1,5 @@
+global-exclude __pycache__  # exclude bytecode
+global-exclude *.py[co]
 include README-clang.txt
 include pytest.ini
 recursive-include examples *
