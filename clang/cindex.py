@@ -67,6 +67,9 @@ import collections
 
 import clang.enumerations
 
+import subprocess
+import os
+
 import sys
 if sys.version_info[0] == 3:
     # Python 3 strings are unicode, translate them to/from utf8 for C-interop.
@@ -4122,6 +4125,17 @@ class Config:
         if Config.library_path:
             file = Config.library_path + '/' + file
 
+        if not os.path.exists ( file ) :
+            command = ['llvm-config','--libdir']
+            try :
+                libdir = subprocess.check_output(command).decode().strip()
+            except :
+                raise Exception("Unable to locate clang shared library, '"+
+                          , ' '.join(command) + "' failed.  Is llvm installed ?")
+            file = os.path.join ( libdir, os.path.basename ( file ) )
+            if not os.path.exists ( file ) :
+                raise Exception("clang shared library '{}'".format(file)
+                                 + "does not exist or is not accessible.")
         return file
 
     def get_cindex_library(self):
