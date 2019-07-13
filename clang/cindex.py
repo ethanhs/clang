@@ -2167,7 +2167,7 @@ class Type(Structure):
         The returned object is iterable and indexable. Each item in the
         container is a Type instance.
         """
-        class ArgumentsIterator(collections.Sequence):
+        class ArgumentsIterator(collections.abc.Sequence):
             def __init__(self, parent):
                 self.parent = parent
                 self.length = None
