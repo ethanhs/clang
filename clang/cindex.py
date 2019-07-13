@@ -4130,8 +4130,8 @@ class Config:
             try :
                 libdir = subprocess.check_output(command).decode().strip()
             except :
-                raise Exception("Unable to locate clang shared library, '"+
-                          , ' '.join(command) + "' failed.  Is llvm installed ?")
+                raise Exception("Unable to locate clang shared library, '"
+                          + ' '.join(command) + "' failed.  Is llvm installed ?")
             file = os.path.join ( libdir, os.path.basename ( file ) )
             if not os.path.exists ( file ) :
                 raise Exception("clang shared library '{}'".format(file)
